@@ -93,6 +93,7 @@ background-repeat: round;
   top: 3%;
   text-align: center;
   border: 1px solid black;
+  border-radius: 20px;
 }
 
 #main{
@@ -109,6 +110,7 @@ background-repeat: round;
   height: 40%;
   padding: 3%;
   transition: opacity 1s ease-in-out;
+  border-radius: 60px;
 }
 
 .thumbnails:hover{
@@ -142,11 +144,17 @@ background-repeat: round;
   width: 45%;
   height: 200%;
   padding : 30px;
+  border-radius: 70px;
 }
 
 #email:hover,#facebook:hover,#github:hover{
+  transition: opacity 1s ease-in-out;
   cursor: pointer;
   opacity: 0.5;
+}
+
+#email{
+  left:0%;
 }
 
 #facebook{
@@ -161,5 +169,5 @@ background-repeat: round;
   position:absolute;
   font-size:30px;
   top: 180%;
-  left: 10.5%;
+  left: 7.5%;
 }
