@@ -6,7 +6,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <img id="header" src="header.png" width="10%" height="10%">
+    <img id="header" src="backgrounds/bck1.png" width="10%" height="10%">
     <div id="main">
 
     </div>
@@ -30,6 +30,10 @@
 
    <script type="text/javascript">
 
+   i = 0;
+
+   intervall = setInterval(changeBackground,90000);
+
    main = document.getElementById("main");
 
    toggleSidebar();
@@ -51,6 +55,23 @@
    jigsaw.src = "thumbnails/jigsaw.jpg";
 
    images=[];
+
+   background1 = new Image();
+   background1.src = "backgrounds/bck1.png";
+
+   background2 = new Image();
+   background2.src= "backgrounds/bck2.jpg";
+
+  background3 = new Image();
+  background3.src = "backgrounds/bck3.jpeg";
+
+  background4 = new Image();
+  background4.src = "backgrounds/bck4.jpg";
+
+  background5 = new Image();
+  background5.src = "backgrounds/bck5.jpeg";
+
+   background = [background1,background2,background3,background4,background5];
 
    function Home(){
 
@@ -128,6 +149,63 @@
      }
   }
 
+  function Stories(){
+    closeSidebar();
+    clearMain();
+
+    text = document.createElement("p");
+    text.id = "text";
+    text.innerHTML += "There are so many good horror story on the internet,<br> but there are some really bad too.";
+    text.innerHTML += "<br><br>If you want to read some really good and horrifying horror,<br> visit one of this sites:<br>";
+    main.appendChild(text);
+
+    creepyPasta = document.createElement("a");
+    creepyPasta.id = "creepyPasta";
+    creepyPasta.innerHTML = "Creepypasta blog<br>";
+    creepyPasta.href = "https://creepypasta.com";
+    creepyPasta.className = "links";
+    main.appendChild(creepyPasta);
+
+    reddit = document.createElement("a");
+    reddit.id = "reddit";
+    reddit.innerHTML = "Scary short stories on Reddit<br>";
+    reddit.href = "https://reddit.com/r/shortscarystories";
+    reddit.className = "links";
+    main.appendChild(reddit);
+
+    smallTown = document.createElement("a");
+    smallTown.id = "smallTown";
+    smallTown.innerHTML = "Scary myths from small towns<br>"
+    smallTown.href = "https://smalltownmyths.com";
+    smallTown.className = "links"
+    main.appendChild(smallTown);
+  }
+
+  function Movies(){
+    closeSidebar();
+    clearMain();
+
+    movies = document.createElement("div");
+    movies.innerHTML += "<img src='posters/halloween.jpg'/><p>Halloween(2018)</p>";
+    movies.innerHTML += "<img src='posters/nightmare.png'/><p>Nightmare on the<br>Elm Street</p>";
+    movies.innerHTML += "<img src='posters/friday.jpg'/><p>Friday the 13th</p>";
+    movies.id = "movies";
+    main.appendChild(movies);
+  }
+
+  function Series(){
+    closeSidebar();
+    clearMain();
+
+    series = document.createElement("div");
+    series.innerHTML += "<img src='posters/castlerock.jpg'/><p>Castle Rock</p>";
+    series.innerHTML += "<img src='posters/supernatural.jpg'/><p>Supernatural</p>";
+    series.innerHTML += "<img src='posters/stranger.jpg'/><p>Stranger Things</p>";
+    series.id = "series";
+    main.appendChild(series);
+
+  }
+
    function toggleSidebar(){
     document.getElementById("sidebar").classList.toggle('active');
     document.getElementById("sideBarButton").style.display="none";
@@ -141,6 +219,18 @@
     function clearMain(){
       while (main.firstChild) {
           main.removeChild(main.firstChild);
+      }
+    }
+
+    function changeBackground(){
+      header = document.getElementById("header");
+
+      header.src = background[i].src;
+
+      i++;
+
+      if(i == background.length){
+        i = 0;
       }
     }
 

@@ -67,7 +67,8 @@ background-repeat: round;
 #sidebar ul li:hover{
   background: red;
   cursor:pointer;
-  text-shadow: -1px 0px white;
+  text-shadow: 3px 3px 10px black;
+  font-size: 22px;
 }
 
 #closeMenu{
@@ -81,7 +82,8 @@ background-repeat: round;
 }
 #closeMenu:hover{
   background-color: red;
-  text-shadow: -1px 0px white;
+  text-shadow: 3px 3px 10px black;
+  font-size: 22px;
   cursor:pointer;
 }
 
@@ -94,6 +96,7 @@ background-repeat: round;
   text-align: center;
   border: 1px solid black;
   border-radius: 20px;
+  transition: opacity 1s ease-in-out;
 }
 
 #main{
@@ -170,4 +173,53 @@ background-repeat: round;
   font-size:30px;
   top: 180%;
   left: 7.5%;
+}
+
+#text{
+  color:red;
+  font-size: 30px;
+  text-shadow: 3px 3px black;
+}
+
+.links{
+  position: absolute;
+  font-size: 30px;
+  text-shadow: 3px 3px black;
+  color:red;
+  text-decoration: none;
+  padding: 40px;
+}
+
+#reddit{
+  top: 60%;
+}
+
+#smallTown{
+  top:90%;
+}
+
+.links:hover{
+  text-shadow: 0px 0px 30px yellow;
+  font-size: 35px;
+}
+
+.links:visited{
+  text-shadow: 0px 0px 25px green;
+}
+
+#movies>img,#series>img{
+  width: 200px;
+  height:300px;
+}
+
+#movies>p,#series>p{
+  padding-top: 15px;
+  padding-bottom: 50px;
+  text-shadow: 3px 3px black;
+}
+
+#movies,#series{
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-align: center;
 }
