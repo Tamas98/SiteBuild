@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Horror Horde</title>
+   <link rel="stylesheet" type="text/css" href="sidebar.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <img id="header" src="header.png" width="10%" height="10%">
+    <div id="main">
+
+    </div>
+   <div id="sidebar">
+    <div id="sideBarButton" class="toggle" onclick="toggleSidebar()"><a>
+     <span></span>
+     <span></span>
+     <span></span>
+    </a>
+    </div>
+    <ul>
+     <li onclick="Home()">Home<i class="fa fa-home" style="padding-left: 10px;"></i></li>
+     <li onclick="Stories()">Stories</li>
+     <li onclick="Characters()">Characters</li>
+     <li onclick="Movies()">Movies</li>
+     <li onclick="Series()">Series</li>
+    </ul>
+    <p id="closeMenu" onclick="closeSidebar()"><<< Close</p>
+   </div>
+
+
+   <script type="text/javascript">
+
+   main = document.getElementById("main");
+
+   toggleSidebar();
+   Home();
+
+   jason = new Image();
+   jason.src = "thumbnails/jason_.jpeg";
+
+   myers = new Image();
+   myers.src = "thumbnails/myers_.jpg";
+
+   freddy = new Image();
+   freddy.src = "thumbnails/freddy.jpg";
+
+   chucky = new Image();
+   chucky.src = "thumbnails/chucky.jpg";
+
+   jigsaw = new Image();
+   jigsaw.src = "thumbnails/jigsaw.jpg";
+
+   images=[];
+
+   function Home(){
+
+     closeSidebar();
+     clearMain();
+
+     images=[];
+
+     welcome = document.createElement("p");
+     welcome.innerHTML= "Welcome";
+     welcome.id = "welcome";
+     main.appendChild(welcome);
+
+     message = document.createElement("p");
+     message.innerHTML = "Where can you find me?:\n";
+     message.id = "message";
+     main.appendChild(message);
+
+     myemail = document.createElement("p");
+     myemail.innerHTML = "tarcsa.tamas90<br>@gmail.com";
+     myemail.id = "myemail";
+     message.appendChild(myemail);
+
+     emailLogo = document.createElement("img");
+     emailLogo.src = "logos/email.png";
+     emailLogo.id = "email";
+     message.appendChild(emailLogo);
+
+     link = document.createElement("a");
+     link.href = "https://www.facebook.com/tamas.tarcsa.75";
+
+     facebook = document.createElement("img");
+     facebook.src = "logos/facebook.png";
+     facebook.id = "facebook";
+     link.appendChild(facebook);
+     message.appendChild(link);
+
+     linkgit = document.createElement("a");
+     linkgit.href = "https://github.com/Tamas98";
+     github = document.createElement("img");
+     github.src = "logos/github.png";
+     github.id = "github";
+     linkgit.appendChild(github);
+     message.appendChild(linkgit);
+   }
+
+   function Characters(){
+
+     closeSidebar();
+     clearMain();
+
+     if(images.length == 0){
+       images=[jason,myers,freddy,chucky,jigsaw];
+
+       for(i = 0;i < images.length;i++){
+
+         character_name = document.createElement("p");
+         source = images[i].src;
+         link = source.substr(source.indexOf("thumbnails/")+11,6);
+
+         way = document.createElement("a");
+         loadIn = document.createElement("img");
+         loadIn.className = "thumbnails";
+         loadIn.src = images[i].src;
+
+         way.href = "https://horror.fandom.com/wiki/" + link;
+         way.appendChild(loadIn);
+
+
+         main.appendChild(way);
+         if(i == 2){
+           main.appendChild(document.createElement("br"));
+         }
+       }
+     }
+  }
+
+   function toggleSidebar(){
+    document.getElementById("sidebar").classList.toggle('active');
+    document.getElementById("sideBarButton").style.display="none";
+    }
+
+    function closeSidebar(){
+      toggleSidebar();
+      document.getElementById("sideBarButton").style.display="block";
+    }
+
+    function clearMain(){
+      while (main.firstChild) {
+          main.removeChild(main.firstChild);
+      }
+    }
+
+   </script>
+  </body>
+</html>

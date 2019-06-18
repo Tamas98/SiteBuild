@@ -1,0 +1,165 @@
+*{
+ margin: 0;
+ padding: 0;
+ font-family: sans-serif;
+}
+
+body{
+background-image: url("background.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-repeat: round;
+}
+
+
+
+#sidebar{
+ position: fixed;
+ width: 200px;
+ height: 100%;
+ left: -200px;
+ background-image: url("menuBack.jpg");
+ transition: all 500ms linear;
+}
+
+#sidebar.active{
+ left:0px;
+}
+
+#sidebar.inactive{
+  left:-200px;
+}
+
+#sidebar ul li{
+ color: rgba(230,230,230,0.9);
+ list-style: none;
+ font-weight: bold;
+ font-size: 20px;
+ -webkit-text-stroke-width: 0.7px;
+ overflow: hidden;
+ -webkit-text-stroke-color: yellow;
+ letter-spacing: 8px;
+ padding: 15px 10px;
+ border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+
+
+#sidebar .toggle{
+ position: absolute;
+ transition: all 500ms linear;
+ top: 0px;
+ left: 0px;
+ background-color: black;
+ padding: 10px;
+ left: 230px;
+ top: 20px;
+ cursor: pointer;
+}
+
+#sidebar .toggle span{
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: white;
+  margin: 5px 0px;
+}
+
+#sidebar ul li:hover{
+  background: red;
+  cursor:pointer;
+  text-shadow: -1px 0px white;
+}
+
+#closeMenu{
+  color:white;
+  letter-spacing: 5px;
+  margin-top: 180%;
+  padding: 7.5px;
+  border-bottom: 2px solid rgba(100,100,100,0.3);
+  -webkit-text-stroke-width: 0.7px;
+  -webkit-text-stroke-color: yellow;
+}
+#closeMenu:hover{
+  background-color: red;
+  text-shadow: -1px 0px white;
+  cursor:pointer;
+}
+
+#header{
+  position: absolute;
+  width:90%;
+  height:30%;
+  left:5%;
+  top: 3%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+#main{
+  position:absolute;
+  color:red;
+  top:40%;
+  left:5%;
+  width: 90%;
+  height: 90%;
+}
+
+.thumbnails{
+  width: 25%;
+  height: 40%;
+  padding: 3%;
+  transition: opacity 1s ease-in-out;
+}
+
+.thumbnails:hover{
+  opacity: 0.5;
+
+}
+
+#welcome{
+  color: red;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 100px;
+  text-shadow: 6px 6px black;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 10px;
+  line-height: 1;
+  text-align: center;
+}
+
+#message{
+  position:absolute;
+  font-size: 40px;
+  font-family: 'Helvetica Neue', sans-serif;
+  text-shadow: 5px 5px black;
+  padding: 20px;
+  padding-top: 40px;
+}
+
+#email,#facebook,#github{
+  position: absolute;
+  width: 45%;
+  height: 200%;
+  padding : 30px;
+}
+
+#email:hover,#facebook:hover,#github:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+#facebook{
+  left: 60%;
+}
+
+#github{
+  left: 120%;
+}
+
+#myemail{
+  position:absolute;
+  font-size:30px;
+  top: 180%;
+  left: 10.5%;
+}
